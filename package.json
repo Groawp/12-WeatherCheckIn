@@ -1,0 +1,24 @@
+{
+  "name": "weather-checkin-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Groawp/12-WeatherCheckIn.git"
+  },
+  "author": "Duy Le",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Groawp/12-WeatherCheckIn/issues"
+  },
+  "homepage": "https://github.com/Groawp/12-WeatherCheckIn#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}

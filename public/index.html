@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Check In</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="logo">
+        <img src="weather-icon.png" alt="logo" />
+        <h1>Weather</h1>
+      </div>
+      <ul class="nav">
+        <li class="nav-link"><a href="#">WEATHER</a></li>
+        <li class="nav-link"><a href="#">CHECK-IN</a></li>
+      </ul>
+    </nav>
+
+    <button id="submit">Get Current Weather</button>
+    <div class="container">
+      <p class="city-info"><span id="city"></span></p>
+      <div class="weather-panel">
+        <div class="desc"></div>
+        <div class="temperature"></div>
+        <div class="feel-like"></div>
+        <div class="icon"></div>
+        <div class="info">
+          <div class="lat-info">Latitude: <span id="lat"></span> &deg</div>
+          <div class="lon-info">Longitude: <span id="lon"></span> &deg</div>
+        </div>
+      </div>
+
+      <button id="post">Check In</button>
+      <div class="success"></div>
+      <div class="saving">
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
