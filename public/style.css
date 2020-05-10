@@ -6,9 +6,9 @@
 }
 
 body {
-  background: url(bg.jpg) center no-repeat;
-  background-size: cover;
+  background-color: #000000;
   height: 100vh;
+  transition: background 0.5s;
 }
 
 .nav-bar {
@@ -26,6 +26,15 @@ body {
   margin-left: 30px;
   display: flex;
   align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a h1:hover {
+  color: #f4511e;
+  transition: color .5s;
 }
 
 .logo img {
@@ -58,7 +67,8 @@ body {
 }
 
 .nav-link a:hover {
-  color: rgb(33, 135, 219);
+  color: #0091cf;
+  transition: color 0.5s;
 }
 
 .nav-link a {
@@ -69,8 +79,6 @@ body {
 
 /* BODY SECTION */
 
-
-
 .container {
   visibility: hidden;
   opacity: 0;
@@ -80,7 +88,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.8);
-  /* background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url('https://wallpapertag.com/wallpaper/full/d/c/c/82528-free-night-background-2560x1600-desktop.jpg') center no-repeat; */
   background-size: cover;
   width: 500px;
   height: 70vh;
@@ -89,7 +96,7 @@ body {
   align-items: center;
   box-shadow: 0px 0px 20px black;
   border-radius: 50px;
-  transition: opacity 2s;
+  transition: opacity 1s;
 }
 
 .info {
@@ -107,25 +114,126 @@ body {
   margin-right: 50px;
 }
 
-button {
-  padding: 10px;
-  margin: 10px;
-  background-color: rgb(33, 135, 219);
+#post {
+  border-radius: 10px;
+  background-color: #f4511e;
   border: none;
-  border-radius: 50px;
-  color: white;
-  width: 300px;
-  font-size: 1.3rem;
-  font-family: "Rubik", sans-serif;
-  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  outline: none;
+}
+
+#post span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#post span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#post:hover span {
+  padding-right: 25px;
+}
+
+#post:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 #submit {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  transition: all .5s;
+}
 
+#submit:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+#submit:active {
+  color: transparent;
+}
+
+#submit:active:after {
+  background: transparent;
+}
+
+#submit:hover:before {
+  opacity: 1;
+}
+
+#submit:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .saving {
@@ -176,4 +284,21 @@ button {
 
 .feel-like {
   font-size: 1.3rem;
+}
+
+/* MAP SECTION */
+
+.map-wrapper {
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease;
+  border-radius: 50px;
+  
+}
+#mapid {
+  top: 5vh;
+  height: 700px;
+  width: 1000px;
+  margin: auto;
 }
