@@ -59,7 +59,7 @@ var interval = setInterval(async function(){
     }
     const locationArray = await getDb();
     const updateMap = locationArray.forEach(location => {
-        console.log(`${location.city} has been saved to map.`)
+        // console.log(`${location.city} has been saved to map.`)
         var marker = L.marker([location.lat, location.lon]).addTo(mymap);
         marker.setLatLng([location.lat, location.lon]);
     })

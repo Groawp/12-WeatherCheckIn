@@ -28,8 +28,6 @@ app.post('/api', (req,res) => {
     const request = req.body
     const dateString = new Date(request.timestamp).toLocaleString()
     request["date"] = dateString
-    console.log("Incoming data....")
-    console.log(request)
     database.insert(request)
     database.count({}, function (err, count) {
         res.send({feedback: "Success", currentCheckIn: count})
